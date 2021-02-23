@@ -3,7 +3,7 @@
 # https://stackoverflow.com/questions/41471819/installing-docker-with-script-on-windows/54038523#54038523
 
 # First Download the installer (wget is slow...)
-# wget https://download.docker.com/win/stable/Docker%20for%20Windows%20Installer.exe -OutFile docker-installer.exe
+
 
 (New-Object System.Net.WebClient).DownloadFile('https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe', 'docker-installer.exe')
 # Install
@@ -17,9 +17,6 @@ start-process "$env:ProgramFiles\docker\Docker\Docker Desktop.exe"
 
 write-host "Done with Docker for windows."
 
-## TODO problem with permission
-# Add-LocalGroupMember -Group "docker-users" -Member "admink8s"
-#### net localgroup "docker-users" "admink8s" /add
 
 # installing azure CLI 
 Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; 
@@ -39,19 +36,19 @@ write-host "Done with Visual Studio Code."
 
 ### TODO adding extentions
 
-Start-Process  -FilePath 'C:\Program Files (x86)\Microsoft VS Code\Code.exe' -ArgumentList '--install-extension ms-azuretools.vscode-docker'
-Start-Process  -FilePath 'C:\Program Files (x86)\Microsoft VS Code\Code.exe' -ArgumentList '--install-extension ms-vscode.azure-account'
-Start-Process  -FilePath 'C:\Program Files (x86)\Microsoft VS Code\Code.exe' -ArgumentList '--install-extension ms-vscode.azurecli'
-Start-Process  -FilePath 'C:\Program Files (x86)\Microsoft VS Code\Code.exe' -ArgumentList '--install-extension ms-kubernetes-tools.vscode-kubernetes-tools'
-Start-Process  -FilePath 'C:\Program Files (x86)\Microsoft VS Code\Code.exe' -ArgumentList '--install-extension ms-vscode-remote.remote-wsl'
-Start-Process  -FilePath 'C:\Program Files (x86)\Microsoft VS Code\Code.exe' -ArgumentList '--install-extension redhat.vscode-yaml'
+# Start-Process  -FilePath 'C:\Program Files (x86)\Microsoft VS Code\Code.exe' -ArgumentList '--install-extension ms-azuretools.vscode-docker'
+# Start-Process  -FilePath 'C:\Program Files (x86)\Microsoft VS Code\Code.exe' -ArgumentList '--install-extension ms-vscode.azure-account'
+# Start-Process  -FilePath 'C:\Program Files (x86)\Microsoft VS Code\Code.exe' -ArgumentList '--install-extension ms-vscode.azurecli'
+# Start-Process  -FilePath 'C:\Program Files (x86)\Microsoft VS Code\Code.exe' -ArgumentList '--install-extension ms-kubernetes-tools.vscode-kubernetes-tools'
+# Start-Process  -FilePath 'C:\Program Files (x86)\Microsoft VS Code\Code.exe' -ArgumentList '--install-extension ms-vscode-remote.remote-wsl'
+# Start-Process  -FilePath 'C:\Program Files (x86)\Microsoft VS Code\Code.exe' -ArgumentList '--install-extension redhat.vscode-yaml'
 
-#### code --install-extension ms-azuretools.vscode-docker
-#### code --install-extension ms-vscode.azure-account
-#### code --install-extension ms-vscode.azurecli
-#### code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
-#### code --install-extension ms-vscode-remote.remote-wsl
-#### code --install-extension redhat.vscode-yaml
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension ms-vscode.azure-account
+code --install-extension ms-vscode.azurecli
+code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
+code --install-extension ms-vscode-remote.remote-wsl
+code --install-extension redhat.vscode-yaml
 
 # Installing GIT - OK 
 
