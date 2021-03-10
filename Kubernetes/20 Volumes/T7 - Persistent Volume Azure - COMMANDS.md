@@ -111,3 +111,11 @@ spec:
 8. Create new file in Azure Files (using Portal).
 Use kubectl exec to get a shell to a running Container.
 List files inside '/mnt/test'.'
+
+  ```shell
+  kubectl exec <pod_name> -- sh -c "ls /mnt/test"
+  ```
+
+  ```shell
+  kubectl exec <pod_name> -- sh -c "cat /mnt/test/<file_name>"
+  ```
